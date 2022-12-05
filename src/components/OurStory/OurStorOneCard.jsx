@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 
@@ -13,30 +14,30 @@ const DecoLine = styled.div`
 `;
 
 function OurStorOneCard(props) {
-  function counter(max) {
-    const [counter1, setCounter1] = useState(1);
+  function counter(max, speed, step) {
+    const [counter1, setCounter1] = useState(0);
 
     if (counter1 < max) {
       setTimeout(() => {
         setCounter1((prev) => {
-          prev + 1;
-
-          return prev + 13;
+          return (
+            prev +
+            step +
+            (props.rrNumber ? (Math.random() * 10).toFixed(0) * 1 : 0)
+          );
         });
-      }, '80');
+      }, speed);
     } else {
       return max;
     }
     return counter1;
-    console.log('counter1 ===', counter1);
   }
-  //   counter(1560);
 
   return (
     <OneCard>
-      <h2>{counter(1560)}+</h2>
+      <h2>{counter(props.maximumValue, props.countSpeed, props.stepValue)}+</h2>
       <DecoLine />
-      <h4>Project Delivered</h4>
+      <h4>{props.name}</h4>
     </OneCard>
   );
 }

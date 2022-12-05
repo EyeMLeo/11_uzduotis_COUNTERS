@@ -32,10 +32,33 @@ function OurStory(props) {
         </p>
       </div>
       <CardGrid>
-        <OurStorOneCard />
-        <OurStorOneCard />
-        <OurStorOneCard />
-        <OurStorOneCard />
+        <OurStorOneCard
+          name={'Projects created'}
+          maximumValue={1560}
+          countSpeed={'30'}
+          stepValue={10}
+          rrNumber={true}
+        />
+        <OurStorOneCard
+          name={'Projects created'}
+          maximumValue={100}
+          countSpeed={'110'}
+          stepValue={5}
+          rrNumber={true}
+        />
+        <OurStorOneCard
+          name={'Projects created'}
+          maximumValue={950}
+          countSpeed={'50'}
+          stepValue={5}
+          rrNumber={true}
+        />
+        <OurStorOneCard
+          name={'Projects created'}
+          maximumValue={10}
+          countSpeed={'400'}
+          stepValue={1}
+        />
       </CardGrid>
     </DoubleDiv>
   );
