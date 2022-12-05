@@ -13,10 +13,15 @@ const DecoLine = styled.div`
   background-color: #ffa155bb;
 `;
 
+// setTimeout(() => {
+//   console.log(' delayed 2 secs ');
+// }, 2000);
+
 function OurStorOneCard(props) {
   function counter(max, speed, step) {
     const [counter1, setCounter1] = useState(0);
 
+    // IF
     if (counter1 < max) {
       setTimeout(() => {
         setCounter1((prev) => {
@@ -30,6 +35,8 @@ function OurStorOneCard(props) {
     } else {
       return max;
     }
+    // / IF
+
     return counter1;
   }
 
